@@ -15,3 +15,13 @@ for mode, move in pairs({ n = "move_line", x = "move_selection" }) do
     end, { desc = "Move " .. direction })
   end
 end
+
+-- Temporarily disabled in favor of WhichKey's built-in Vim motion help.
+-- require("mini.clue").setup({
+--   triggers = {
+--     { mode = { "n", "x" }, keys = "<Leader>" },
+--   },
+--   window = {
+--     delay = 300,
+--   },
+-- })

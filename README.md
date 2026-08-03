@@ -6,6 +6,8 @@ A minimal personal Neovim 0.12 configuration using Neovim's built-in `vim.pack` 
 
 - Catppuccin Mocha theme
 - `mini.pick` for file and text search; `mini.files` for file browsing
+- WhichKey for dynamic keybinding hints and built-in Vim motion help
+- `blink.cmp` for LSP, buffer, path, and snippet completion
 - Git hunk signs and actions via Gitsigns
 - Tree-sitter parsers for Python, Markdown, YAML, Dockerfiles, TypeScript, and Svelte
 - LSP support for Basedpyright, Ruff, and TypeScript
