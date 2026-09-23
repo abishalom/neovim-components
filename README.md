@@ -17,7 +17,7 @@ A minimal personal Neovim 0.12 configuration using Neovim's built-in `vim.pack` 
 
 - Neovim 0.12+
 - Git
-- A C compiler and a compatible `tree-sitter` CLI for parser installation. On this Ubuntu 22.04 machine: `npm install -g tree-sitter-cli@0.25.10`
+- A C compiler, Rust/Cargo, and Tree-sitter CLI 0.26.1+ for parser installation. On this Ubuntu 22.04 machine: `cargo install tree-sitter-cli --version 0.26.13 --locked` (the `nvim-treesitter` plugin recommends installing the CLI via Cargo, not npm)
 - `basedpyright`, `ruff`, and `typescript-language-server` available on `PATH`
 - A project-local `typescript` dependency for TypeScript/Svelte projects (standard in SvelteKit projects)
 
