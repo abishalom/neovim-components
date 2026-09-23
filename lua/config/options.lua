@@ -1,3 +1,16 @@
+vim.g.clipboard = {
+  name = "WslClipboard",
+  copy = {
+    ["+"] = "clip.exe",
+    ["*"] = "clip.exe",
+  },
+  paste = {
+    ["+"] = 'powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).ToString().Replace("`r", ""))',
+    ["*"] = 'powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).ToString().Replace("`r", ""))',
+  },
+  cache_enabled = false,
+}
+
 local opt = vim.opt
 
 opt.number = true
@@ -15,3 +28,4 @@ opt.updatetime = 250
 opt.timeoutlen = 300
 opt.undofile = true
 opt.breakindent = true
+opt.clipboard = "unnamedplus"
