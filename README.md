@@ -21,6 +21,31 @@ A minimal personal Neovim 0.12 configuration using Neovim's built-in `vim.pack` 
 - `basedpyright`, `ruff`, and `typescript-language-server` available on `PATH`
 - A project-local `typescript` dependency for TypeScript/Svelte projects (standard in SvelteKit projects)
 
+## Clipboard
+
+`NVIM_CLIPBOARD` selects the clipboard provider (default: `auto`):
+
+| Value | Behavior |
+| --- | --- |
+| `auto` | OSC 52 over SSH; Windows clipboard on WSL; otherwise Neovim's native provider detection |
+| `osc52` | Copy/paste through terminal OSC 52 escape sequences |
+| `wsl` | Use `clip.exe` and `powershell.exe` |
+| `native` | Let Neovim detect the system clipboard utility |
+
+Override for one invocation, or export it in your shell configuration:
+
+```sh
+NVIM_CLIPBOARD=osc52 nvim
+# For a local Linux desktop:
+export NVIM_CLIPBOARD=native
+```
+
+Local Linux desktops need `wl-clipboard` (Wayland) or `xclip`/`xsel` (X11).
+OSC 52 requires support in your local terminal; clipboard reads/paste queries
+are often blocked or unsupported. Use your terminal's paste shortcut in that
+case. WSL requires Windows interoperability and its clipboard commands on `PATH`.
+Normal yanks/pastes use the selected provider via `unnamedplus`.
+
 ## Keymaps
 
 `<leader>` is Space.
